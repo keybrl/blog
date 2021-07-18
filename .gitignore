@@ -1,11 +1,15 @@
-/.idea/
-/.public/
-/.deploy*/
+# IDE / Editor
+.idea/
+.vscode/
+
+# Hexo
+.public/
+.deploy*/
 /node_modules/
 /.DS_Store
 /Thumbs.db
 /db.json
 *.log
-__pycache__/
 
-/deploy/
+# py
+__pycache__/
