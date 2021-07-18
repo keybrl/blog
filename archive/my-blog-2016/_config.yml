@@ -1,0 +1,40 @@
+name: Keyboard's blog
+email: 809910230@qq.com
+author: Keyboard-w@outlook.com
+url: https://keyboard-l.github.io/Keyboard-L/
+baseurl: "/Keyboard-L"
+resume_site: https://github.com/Keyboard-l/
+github: https://github.com/Keyboard-l/
+github_project: https://github.com/Keyboard-l/Keyboard-L.git
+github_username: Keyboard-L
+
+description: Talk is cheap,show me the code.
+meta_description: Keyboard;个人博客;Talk is cheap,show me the code.;生命不止;折腾不休
+motto: Talk is cheap,show me the code.
+banner: Talk is cheap,show me the code.
+
+#permalink: /:categories/:year/:month/:day/:title/
+permalink: /:year/:month/:day/:title/
+paginate: 10
+
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
+
+
+highlighter: rouge
+
+# Build settings
+markdown: kramdown
+
+FB:
+  comments :
+    provider : duoshuo
+    duoshuo:
+        short_name : Keyboard-L
+    disqus :
+        short_name : Keyboard
+    # facebook :
+    #   appid : 123
+    #   num_posts: 5
+    #   width: 580
+    #   colorscheme: light
+    

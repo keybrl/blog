@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  {% include head.html %}
+  <style>
+    #banner::after {
+      background-color: rgb(0, 180, 255);
+    }
+  </style>
+  <body>
+    {% include header.html %}
+    <!-- Banner -->
+    <section id="banner" class="style2">
+      <div class="inner">
+        <span class="image">
+          <img src="{{ site.assets_url }}/{{ page.image }}" alt="">
+        </span>
+        <header class="major">
+          <h1>{{ page.landing-title }}</h1>
+        </header>
+        <div class="content">
+          {{ page.description }}
+        </div>
+      </div>
+    </section>
+
+    <section id="two">
+      <div class="inner">
+        {{ content }}
+      </div>
+    </section>
+
+    <!-- Main -->
+    <div id="main" class="alt">
+      <!-- One -->
+      <section id="one" class="tiles">
+      	{% for post in site.posts %}
+      	{% if site.tiles-source == 'posts' and post.layout == 'post' %}
+          <article>
+            <span class="image">
+              <img src="{{ site.assets_url }}/{{ post.image }}" alt="" />
+            </span>
+            <header class="major">
+              <h3><a href="{{ post.url  | relative_url }}" class="link">{{ post.title }}</a></h3>
+              <p>{{ post.description }}</p>
+            </header>
+          </article>
+      	{% endif %}
+      	{% endfor %}
+      	{% for page in site.pages %}
+      	{% if site.tiles-source == 'pages' and page.layout == 'post' %}
+          <article>
+            <span class="image">
+              <img src="{{ site.assets_url }}/{{ page.image }}" alt="" />
+            </span>
+            <header class="major">
+              <h3><a href="{{ page.url | relative_url  }}" class="link">{{ page.title }}</a></h3>
+              <p>{{ page.description }}</p>
+            </header>
+          </article>
+      	{% endif %}
+      	{% endfor %}
+      </section>
+    </div>
+    {% include footer.html %}
+  </body>
+</html>

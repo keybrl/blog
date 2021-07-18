@@ -1,0 +1,38 @@
+# site settings
+title: KeybrL
+subtitle: who is nothing!
+email: keyboard-l@outlook.com
+description: "Keyboard L 的个人博客<br>主要用于为Keyboard个人记录思维成果和对外进行思想渗透"
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "https://keybrl.github.io/my_Blog-2018" # the base hostname & protocol for your site
+assets_url: "//keybrl-my-blog.oss-cn-shenzhen.aliyuncs.com/2018"
+author:
+street_address: Xidian University
+city: Xi'an
+state: SN
+zip_code: 710118
+country: China
+phone:
+
+# homepage tiles
+tiles-source: posts # accepts "posts" or "pages"
+tiles-count: 6
+
+# social settings
+500px_url:
+facebook_url:
+github_url: https://github.com/Keyboard-l
+gitlab_url:
+googleplus_url:
+instagram_url:
+linkedin_url:
+pinterest_url:
+slack_url:
+twitter_url:
+steam_url: http://steamcommunity.com/id/keyboard_l
+
+# build settings
+markdown: kramdown
+
+sass:
+  style: compressed

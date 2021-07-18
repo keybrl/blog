@@ -1,0 +1,14 @@
+/.idea/
+/.public/
+/.deploy*/
+/node_modules/
+/.DS_Store
+/Thumbs.db
+/db.json
+*.log
+__pycache__/
+
+/deploy/
+
+# secret
+fluid_config.yml

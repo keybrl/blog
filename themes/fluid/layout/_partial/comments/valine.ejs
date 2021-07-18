@@ -1,0 +1,29 @@
+<% if(theme.valine.appid && theme.valine.appkey){ %>
+  <div id="vcomments" style="margin: 1rem auto;"></div>
+  <script src="https://blog-assets-1253422097.file.myqcloud.com/fluid-theme/lib/valine/av-min.js"></script>
+  <script src="https://blog-assets-1253422097.file.myqcloud.com/fluid-theme/lib/valine/Valine.min.js"></script>
+
+  <script>
+    var notify = '<%= theme.valine.notify %>' === 'true';
+    var verify = '<%= theme.valine.verify %>' === 'true';
+    var visitor = '<%= theme.valine.visitor %>' === 'true';
+    var oldLoad = window.onload;
+    window.onload = function () {
+      new Valine({
+        el: '#vcomments',
+        notify: notify,
+        verify: verify,
+        app_id: "<%= theme.valine.appid %>",
+        app_key: "<%= theme.valine.appkey %>",
+        placeholder: "<%= theme.valine.placeholder %>",
+        avatar: "<%= theme.valine.avatar %>",
+        meta: <%- theme.valine.meta %>,
+        pageSize: "<%= theme.valine.pageSize %>",
+        visitor: visitor,
+      });
+      oldLoad && oldLoad();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" rel="nofollow noopener">comments
+      powered by Valine.</a></noscript>
+<% } %>

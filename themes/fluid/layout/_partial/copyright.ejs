@@ -1,0 +1,16 @@
+<% if (theme.footer.copyright.enable) { %>
+  <% let today = new Date(); %>
+  <div style="padding-top: 10px;font-size: 90%; color: #8d8d8d; font-weight: bolder;">
+    Copyright
+    &copy;
+    <%= theme.footer.copyright.since %>
+    <% if (today.getFullYear().toString() !== theme.footer.copyright.since.toString()) { %>
+      - <%= today.getFullYear() %>
+    <% } %>
+    <%- theme.footer.copyright.owner %>
+    <% if (theme.footer.copyright.all_right_reserved) { %>
+      All Right Reserved
+    <% } %>
+    .
+  </div>
+<% } %>
