@@ -1,0 +1,356 @@
+#---------------------------
+# Hexo Fluid
+# Author: Fluid-dev organization
+# Github: https://github.com/fluid-dev/hexo-theme-fluid
+#
+# Docs：https://hexo.fluid-dev.com/docs/guide/
+#---------------------------
+
+
+#---------------------------
+# 全局
+# Site
+#---------------------------
+favicon: https://blog-assets-1253422097.file.myqcloud.com/images/favicon.png  # 网站标签页的 icon
+
+apple_touch_icon: https://blog-assets-1253422097.file.myqcloud.com/images/favicon.png  # 用于苹果设备的 icon
+
+title_join_string: ' | '  # 浏览器标签页中的标题分隔符，效果： 文章名 ~ 站点名
+
+force_https: false  # 强制所有链接升级为 HTTPS（适用于图片等资源出现 HTTP 混入报错）
+
+highlight:  # 代码高亮
+  enable: true
+  theme: tomorrow-night-eighties  # available: github-v2 | tomorrow | tomorrow-night | tomorrow-night-eighties，更多主题可从 https://jmblog.github.io/color-themes-for-google-code-prettify/ 获取，保存为 `*.min.css` 到 `source/lib/prettify/`，在其中 .prettyprint{ background: ***; ...} 的background 值后加上 !important，例如：.prettyprint{background:#fafbfc!important; ...}
+
+
+fun_features:  # 一些好玩的功能
+  typing:            # 为 subtitle 添加打字机效果
+    enable: true
+    typeSpeed: 70    # 打印速度
+    cursorChar: '_'  # 游标字符
+    loop: false      # 是否循环播放效果
+  anchorjs:                            # 为文章内容中的标题添加锚图标
+    enable: true
+    element: 'h1, h2, h3, h4, h5, h6'  # 应用的元素
+    placement: 'right'                 # icon放置的位置： left | right
+    visible: 'right'                   # 默认悬浮显示，可选：hover（鼠标在元素上悬浮时显示） | always（一直显示） | touch（移动端触摸显示）
+    icon: '§'                          # 可选：§ | # | ❡ 等，留空则为默认效果
+  mouse_click:       # 鼠标点击动效
+    enable: false
+    style: 'values'  # 目前设置两个值：values（价值观词汇） | love（爱心）
+
+
+color:  # 主体颜色配置，可以从这里寻找启发： https://www.webdesignrankings.com/resources/lolcolors/
+  body_bg_color: '#eee'
+  navbar_bg_color: '#2f4154'
+  navbar_text_color: 'white'
+  text_color: '#3c4858'
+  link_color: '#3c4858'
+  link_hover_color: '#1abc9c'
+  board_color: '#fff'
+
+web_analytics:  # 网页访问统计
+  enable: true
+  baidu:    # 百度统计的Key，参见 https://tongji.baidu.com/sc-web/10000033910/home/site/getjs?siteId=13751376 代码获取中 hm.js? 后边的字符串
+  google: 'UA-119555935-1'  # Google统计的Tracking ID，参见 https://analytics.google.com/analytics/web/
+  tencent:  # 腾讯统计的H5 App id，参见 https://mta.qq.com/h5/manage/ctr_app_manage
+  woyaola:  # 51.la站点统计ID，参见 https://www.51.la/user/site/index
+  cnzz:     # 友盟/cnzz站点统计web_id，参见 https://web.umeng.com/main.php?c=site&a=show
+
+lazyload:         # 对页面中的图片进行懒加载处理，可见范围外的图片不会加载
+  enable: true
+  onlypost: true  # 仅在文章页使用懒加载
+
+smooth_scroll:  # 平滑滚动效果
+  enable: true
+
+daovoice:       # 在线客服 Daovoice 参考：http://dashboard.daovoice.io
+  enable: false # 是否开启在线客服聊天
+  appid: ''     # 应用ID设置
+
+#---------------------------
+# 页头
+# Header
+#---------------------------
+navbar:
+  blog_title:  # 导航栏左侧的标题，为空则按 hexo config.title 显示
+  menu:  # 可自行增减，若想减去某个入口，可以将值留空，显示文本关联 languages
+    home: /
+    archive: /archives/
+    category: /categories/
+    tag: /tags/
+    about: /about/
+    links: /links/  # 友链页，把前面#去掉即可展示
+    小额赞助: /donate/
+    RSS: /atom.xml
+
+search:  # 搜索栏
+  enable: true
+  path: /search.xml  # 文件引用地址，默认是下方生成位置，也可以将生成后的 local-search.xml 上传到其它位置引用，如：https://www.example.com/local-search.xml
+  generate_path: /search.xml  # 文件生成位置，必须为相对位置
+  field: all
+  content: true
+
+scroll_down_arrow:  # 向下滚动的箭头
+  enable: true
+  banner_height_limit: 90  # 头图高度不小于指定比例，才显示箭头
+  scroll_after_turning_page: true  # 翻页后自动滚动
+
+banner_parallax: true  # 头图滚动视差
+
+
+#---------------------------
+# 页脚
+# Footer
+#---------------------------
+footer:
+  statistics:  # 统计网站 PV、UV，使用的是不蒜子，显示在页脚
+    enable: false
+    pv_format: "总访问量 {} 次"  # 显示的文本，{}是数字的占位符（必须包含)，下同
+    uv_format: "总访客数 {} 人"
+
+  copyright:  # 版权信息
+    enable: true
+    since: 2016  # 版权开始时间
+    owner: '<a href="https://blog.keybrl.com/" target="_blank">KeybrL</a>'  # 版权所有者
+    all_right_reserved: true  # 版权信息最后是否包含 'All Rights Reserved' 字样
+
+  beian:  # The footer of China's website policy, other areas keep disable
+    enable: true
+    icp_text:  # ICP证号
+    police_text:  # 公安备案号，不填则只显示ICP
+    police_code:  # 公安备案的编号，用于URL跳转查询
+    police_icon:  # 公安备案的图片. 为空时不显示备案图片
+
+scroll_top_arrow:  # 向顶部滚动的箭头
+  enable: true
+
+
+#---------------------------
+# 首页
+# Index Page
+#---------------------------
+index:
+  banner_img: https://blog-assets-1253422097.file.myqcloud.com/images/fluid-theme-img/banners/index.jpg  # 首页 Banner 头图，以下相同
+  banner_img_height: 100  # 头图高度，屏幕百分比，available: 0 - 100
+  slogan:  # 首页副标题的独立设置
+    enable: true  # 为 false 则不显示任何内容
+    text: '欢迎各位强者光临寒舍 ...'  # 为空则按 hexo config.subtitle 显示
+  auto_excerpt:
+    enable: true
+  post_url_target: _self  # available: _blank | _self
+  post_meta: # 是否显示文章信息（时间、分类、标签）
+    date: true
+    category: true
+    tag: true
+
+
+#---------------------------
+# 文章页
+# Post Page
+#---------------------------
+post:
+  banner_img: https://blog-assets-1253422097.file.myqcloud.com/images/fluid-theme-img/banners/post-default.jpg
+  banner_img_height: 100  # available: 0 - 100
+  meta:  # 文章标题下方的信息
+    date:  # 文章日期
+      enable: true
+      format: "YYYY 年 MM 月 DD 日 dddd"  # 格式参照 ISO-8601 日期格式化
+    wordcount:  # 字数统计
+      enable: true
+      format: "{} 字"  # 显示的文本，{}是数字的占位符（必须包含)，下同
+    min2read:  # 阅读时间
+      enable: true
+      format: "{} 分钟"
+    views:  # 阅读次数，统计基于不蒜子或 Valine （如果启用了 Valine 的评论，可以在 valine.visitor 设置是否使用 Valine 取代不蒜子）
+      enable: true
+      format: "{} 次"
+  toc:  # 文章右侧目录
+    enable: true
+    headingSelector: h1,h2,h3,h4,h5,h6
+  copyright:  # 版权声明
+    enable: true
+    content: '本作品采用 <a rel="licence" href="http://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank"><b>知识共享 署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)</b></a> 许可协议进行许可。'
+  custom:  # 文章底部自定义内容
+    enable: false
+    content: '<img src="https://octodex.github.com/images/jetpacktocat.png" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">' # 自定义区域，支持 HTML，可自行插入赞赏码、公众号二维码等内容
+  comments:  # 评论
+    enable: true  # 开启评论
+    type: valine  # 指定使用的评论模块  available: disqus | valine | gitalk | utterances | changyan | livere  推荐 utterances
+    explanation: |
+      <h2>你终于看完了！</h2>
+      <p>如果你对这篇文章有任何想法或者对Keyboard本人有什么看法，随便什么东西，甚至是“hhh”，都可以在下面留言。随便吐槽，反正我不会看的...</p>
+      <p>这是完全匿名的，当然你也可以留个名，甚至留个邮箱（邮箱只有我可见），因为如果你有什么有趣的留言我可能会好奇想认识一下你</p>
+      <p>而且我关掉了邮件提醒功能，所以不管你留不留邮箱，你都不会收到关于你评论的回复的提醒（我也不会收到提醒）</p>
+      <p><em>（老实说，我偶尔会看的...）</em></p>
+  image_zoom:  # 文章图片可点击放大
+    enable: true
+  math:  # 数学公式，开启之前需要更换 Markdown 渲染器，否则复杂公式会有兼容问题，具体请见 https://hexo.fluid-dev.com/docs/guide/#数学公式
+    enable: false
+    specific: false  # 开启后，只有在文章 Front-matter 里指定 `math: true` 才会在文章页启动公式转换，以便在页面不包含公式时提高加载速度
+    engine: mathjax  # 公式引擎  available: mathjax | katex
+
+#---------------------------
+# 评论
+# Comments
+#---------------------------
+
+# 开启评论在上方的 post.comments 配置
+
+# utterances
+# You can install utterances with https://utteranc.es/ and generate your configuration
+utterances:
+  repo:
+  issue_term:
+  label: utterances
+  theme: github-light
+  crossorigin: anonymous
+
+# Disqus
+# 国内用户不要用，已被墙
+disqus:
+  shortname: # your shortname
+
+# Gitalk
+# You can get yout ClientID and ClientSecret from https://github.com/settings/applications/new
+# More info available at https://github.com/gitalk/gitalk#options
+gitalk:
+  clientID:                     # GitHub Application Client ID
+  clientSecret:                 # GitHub Application Client Secret
+  repo:                         # The repo to store comments
+  owner:                        # GitHub repository owner. Can be personal user or organization.
+  admin:                        # GitHub repo owner and collaborators, only these guys can initialize github issues, should be like "['admin']" or "['admin1','admin2']"
+  id: location.pathname         # The unique id of the page. Length must less than 50.
+  language: zh-CN               # Localization language key, en, zh-CN and zh-TW are currently available.
+  labels: "['Gitalk']"          # GitHub issue labels.
+  perPage: 15                   # Pagination size, with maximum 100.
+  pagerDirection: last          # Comment sorting direction, available values are last and first.
+  distractionFreeMode: false    # Facebook-like distraction free mode.
+  createIssueManually: true     # By default, Gitalk will create a corresponding github issue for your every single page automatically when the logined user is belong to the admin users. You can create it manually by setting this option to true.
+
+# Valine
+# You can get your appid and appkey from https://leancloud.cn
+# More info available at https://valine.js.org
+valine:
+  appid: 9nBhQjarudnTltm9uQgqT04z-gzGzoHsz  # your leancloud application appid
+  appkey: jpCWh05kBHWtjvxg6pjbPiMP          # your leancloud application appkey
+  notify: false                             # mail notifier, See: https://github.com/xCss/Valine/wiki
+  verify: false                             # Verification code
+  placeholder: e.g. hhh...                  # comment box placeholder
+  avatar: retro                             # gravatar style https://valine.js.org/avatar.html
+  pageSize: 5                               # pagination size
+  visitor: true
+  meta: '["nick", "mail"]'
+
+# Changyan
+# You can get your appid from http://changyan.kuaizhan.com/setting/common/isv-mgr
+# Install: http://changyan.kuaizhan.com/static/help/f-fitself.html
+changyan:
+  appid: ''            # your changyan application appid        # 畅言ID
+  conf: ''             # conf                                   # 畅言设置
+  notify: false        # beian warning message                  # 备案提示
+  libopen: true        # open laboratory                        # 畅言实验室功能开关
+  cyEmoji: true        # comments emoji                         # 评论表情
+  cyWallsplugin: true  # Hot text matching                      # 热文配图
+  cyReping: true       # hot comments                           # 热门评论
+  cyReward: true       # reward                                 # 打赏
+  cyQing: true         # Light comment                          # 轻评论
+  cyHotusers: true     # User evaluation                        # 热评用户
+  cyHotnews: true      # Hot news                               # 热门新闻
+  cyHotnewswall: true  # News wall                              # 新闻墙
+  cyPk: ''             # Topic debate                           # 辩论
+  cyPoll: true         # vote                                   # 投票
+  cyBarrage: true      # Picture barrage                        # 图片弹幕
+  cyTvbarrage: true    # Video barrage                          # 视频弹幕
+
+# Livere 来必力
+# You can get your uid from https://www.livere.com/my_Livere
+livere:
+  uid: ''            # your livere application uid        # 来必力ID
+
+
+#---------------------------
+# 归档页
+# Archive Page
+#---------------------------
+archive:
+  banner_img: https://blog-assets-1253422097.file.myqcloud.com/images/fluid-theme-img/banners/archive.jpg
+  banner_img_height: 80  # available: 0 - 100
+
+
+#---------------------------
+# 分类归档页
+# Categories Page
+#---------------------------
+category:
+  banner_img: https://blog-assets-1253422097.file.myqcloud.com/images/fluid-theme-img/banners/category.jpg
+  banner_img_height: 80  # available: 0 - 100
+
+
+#---------------------------
+# 标签归档页
+# Tags Page
+#---------------------------
+tag:
+  banner_img: https://blog-assets-1253422097.file.myqcloud.com/images/fluid-theme-img/banners/tag.jpg
+  banner_img_height: 80  # available: 0 - 100
+  tagcloud: # 标签云
+    min_font: 15
+    max_font: 30
+    unit: px  # 字号单位
+    start_color: "#BBBBEE"
+    end_color: "#337ab7"
+
+
+#---------------------------
+# 关于页
+# About Page
+#---------------------------
+about:  # 以下仅为页面顶部的基本信息，更多内容请在 ./pages/about.md 中编辑，支持 markdown 和 HTML
+  subtitle: 关于 Keyboard 和这个博客
+  md_path: ../../source/_data/about.md  # 关于页文档的相对路径，可以按相对文档设置主题之外的路径，从而避免更新冲突
+  banner_img: https://blog-assets-1253422097.file.myqcloud.com/images/fluid-theme-img/banners/about.jpg
+  banner_img_height: 80  # available: 0 - 100
+  avatar: https://blog-assets-1253422097.file.myqcloud.com/images/fluid-theme-img/avatar.jpg  # 头像
+  name: KeybrL
+  introduce: 一个看起来并不有趣的深圳打工仔。  # 支持 HTML
+  icons: # 更多图标可从 https://fontawesome.com/v5.10.0/icons?d=gallery 查找，并以 "图标名: url" 的格式添加在下方
+    "fab fa-github": 'https://github.com/keybrl/'
+    "fab fa-steam": 'https://steamcommunity.com/id/keybrl'
+    "fas fa-envelope": 'mailto:keyboard-l@outlook.com'
+    "fab fa-weixin":  # 微信图标，这个是特殊图标，点击不会跳转而是悬浮二维码，所以链接需要对应二维码图片地址
+
+
+#---------------------------
+# 404页
+# 404 Page
+#---------------------------
+page404:
+  subtitle: '！！您要访问的文章不存在'
+  banner_img: https://blog-assets-1253422097.file.myqcloud.com/images/fluid-theme-img/banners/404.jpg
+  banner_img_height: 100  # available: 0 - 100
+
+
+#---------------------------
+# 友链页
+# Links Page
+#---------------------------
+links:
+  subtitle: 那些有趣的灵魂 | 友链列表
+  banner_img: https://blog-assets-1253422097.file.myqcloud.com/images/fluid-theme-img/banners/links.jpg
+  banner_img_height: 90  # available: 0 - 100
+  items:
+    Nothing important: ['https://blog.maozu.ink/', '被代码耽误的文学家 Maozu']
+    何以解忧，唯有暴富: ['https://www.yichya.dev/', '技能树全满之 尹大人']
+    大炮's Blog: ['https://blog.dapaostudio.com/', '游戏组三代目 张大炮']
+    天空·边界: ['https://liyin.date/', '用心探知天空的边界']
+    Ciaran's Gondolin: ['https://blog.ciaran.cn/', '精通科学计算的数学天才 陈大佬']
+    -Finley- - 博客园: ['https://www.cnblogs.com/Finley', '精通Web后端之 王大人']
+    37A's Personal Site: ['http://blog.three7.cc/', 'Web全栈之 钟大佬']
+    Stay Hungry, Stay Foolish.: ['https://tobiaslee.top/', '全能型学霸 李主席']
+    心渡的小黑屋: ['http://blog.xindu233.com/', '精通计算机图形学的 杨大佬']
+    PaperStation: ['https://onesaber.github.io/PaperStation/', '精通Web后端的游戏策划 zsj']
+    Virtuoso's Blog: ['https://blog.v1rtuoso.cn/', '精通ML之 Virtuoso']
+    Warma: ['http://warmawarma.lofter.com/', '恐怖文学家 忆雨']
+    Frank: ['https://blog.frankli.site/', '全知全能的Frank']

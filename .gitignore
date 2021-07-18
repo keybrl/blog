@@ -9,6 +9,3 @@
 __pycache__/
 
 /deploy/
-
-# secret
-fluid_config.yml
