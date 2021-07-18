@@ -1,4 +1,4 @@
-[![构建状态](https://keybrl.coding.net/badges/keybrl/job/162926/master/build.svg)](https://keybrl.coding.net/p/keybrl/ci/job)
+[![构建状态](https://keybrl.coding.net/badges/keybrl/job/162926/build.svg)](https://keybrl.coding.net/p/keybrl/ci/job)
 
 # KeybrL's Blog
 
