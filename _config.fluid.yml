@@ -600,7 +600,7 @@ post:
   # 文章底部上一篇下一篇功能
   # Link to previous/next post
   prev_next:
-    enable: true
+    enable: false
 
   # 文章底部自定义区域（位于 footer 上方），支持 HTML，可插入赞赏码、公众号这类内容内容
   # Custom content at the bottom of the post page (located above the footer)
