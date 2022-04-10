@@ -1,3 +1,8 @@
+---
+title: 关于 Keyboard 和这个博客
+layout: about
+---
+
 > 欢迎各位强者光临寒舍 ...
 
 这里是 Keyboard 的个人博客
